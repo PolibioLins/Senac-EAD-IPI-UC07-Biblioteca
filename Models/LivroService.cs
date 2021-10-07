@@ -22,6 +22,7 @@ namespace Biblioteca.Models
                 Livro livro = bc.Livros.Find(l.Id);
                 livro.Autor = l.Autor;
                 livro.Titulo = l.Titulo;
+                livro.Ano = l.Ano; // Ajusta para poder atualizar o ano
 
                 bc.SaveChanges();
             }
