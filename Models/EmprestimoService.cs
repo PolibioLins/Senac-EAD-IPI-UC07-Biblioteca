@@ -76,5 +76,18 @@ namespace Biblioteca.Models
                 return bc.Emprestimos.Find(id);
             }
         }
+
+// Criado uma exclusão para casa haja alguma devolução dos livros
+/*
+        public void excluirEmprestimo (int id){
+
+         using(BibliotecaContext bc = new BibliotecaContext()){
+          
+          bc.Emprestimos.Remove(bc.Emprestimos.Find(id));
+          bc.SaveChanges();
+
+         }
+        }
+*/
     }
 }

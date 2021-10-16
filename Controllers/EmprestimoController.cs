@@ -6,7 +6,7 @@ using System;
 
 namespace Biblioteca.Controllers
 {
-    
+
     public class EmprestimoController : Controller
     {
         public IActionResult Cadastro()
@@ -25,28 +25,33 @@ namespace Biblioteca.Controllers
         {
             Autenticacao.CheckLogin(this);
             EmprestimoService emprestimoService = new EmprestimoService();
-            
-            if(viewModel.Emprestimo.Id == 0)
+
+            if (viewModel.Emprestimo.Id == 0)
             {
                 emprestimoService.Inserir(viewModel.Emprestimo);
             }
+
             else
             {
                 emprestimoService.Atualizar(viewModel.Emprestimo);
             }
+
             return RedirectToAction("Listagem");
         }
 
-        public IActionResult Listagem(string tipoFiltro, string filtro)
+        public IActionResult Listagem(string tipoFiltro, string filtro, string itensPorPagina, int numDaPagina, int paginaAtual)
         {
             Autenticacao.CheckLogin(this);
             FiltrosEmprestimos objFiltro = null;
-            if(!string.IsNullOrEmpty(filtro))
+            if (!string.IsNullOrEmpty(filtro))
             {
                 objFiltro = new FiltrosEmprestimos();
                 objFiltro.Filtro = filtro;
                 objFiltro.TipoFiltro = tipoFiltro;
             }
+            
+            ViewData["emprestimosPorPagina"] = (string.IsNullOrEmpty(itensPorPagina) ? 10 : Int32.Parse(itensPorPagina));
+            ViewData["paginaAtual"] = (paginaAtual != 0 ? paginaAtual : 1);
             EmprestimoService emprestimoService = new EmprestimoService();
             return View(emprestimoService.ListarTodos(objFiltro));
         }
@@ -61,8 +66,33 @@ namespace Biblioteca.Controllers
             CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
             cadModel.Livros = livroService.ListarDisponiveis();
             cadModel.Emprestimo = e;
-            
+
             return View(cadModel);
         }
+
+        // Criado uma exclusão para casa haja alguma devolução dos livros 
+
+        /*
+               (Subsituir "Cadastro" por "edição" no form do arquivo /Views/Emprestimos/Edicao.cshtml)
+                (Retirar condição if/eslse do método httpPost de "Cadastro" e deixar apneas a função de inserir )
+                [HttpPost]
+                public IActionResult Edicao(CadEmprestimoViewModel viewModel)
+                {
+                    //DONE
+                  Autenticacao.CheckLogin(this);
+                    EmprestimoService emprestimoService = new EmprestimoService();
+
+                    if (viewModel.Emprestimo.Devolvido == true)
+                    {
+                        emprestimoService.excluirEmprestimo(viewModel.Emprestimo.Id);
+                    }
+                    else
+                    {
+                        emprestimoService.Inserir(viewModel.Emprestimo);
+                    }
+                    return RedirectToAction("Listagem");
+
+                }
+        */
     }
 }
