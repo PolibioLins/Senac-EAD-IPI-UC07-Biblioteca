@@ -116,6 +116,34 @@ O projeto Biblioteca é destinado à biblioteca municipal do bairro B e registra
 
 ## Páginas:
 
-<p><strong>Home</strong></p>
+<p><strong>Login</strong></p>
 
-![Img1](https://user-images.githubusercontent.com/60347748/152258995-5a639bd0-f2db-438a-990c-972cbb91a701.png)
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/Login2.png)
+
+<p><strong>Logado</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/Logado2.png)
+
+<p><strong>Listagem de livros</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/ListagemLivros2.png)
+
+<p><strong>Cadastro de livros</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/CadastroLivros2.png)
+
+<p><strong>Listagem de Empréstimos</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/ListagemEmprestimos2.png)
+
+<p><strong>Cadastro de Empréstimos</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/CadastroEmprestimos2.png)
+
+<p><strong>Cadastro de Usuários</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/CadastroUsuario2.png)
+
+<p><strong>Listagem de Usuários</strong></p>
+
+![Img1](https://github.com/PolibioLins/Senac-EAD-IPI-UC07-Biblioteca/blob/master/wwwroot/css/Usuarios2.png)
